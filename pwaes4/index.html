@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!--  -->
+    <script type="text/javascript" src="uajs/uawindow.js"></script>
+    <script type="text/javascript" src="uajs/uadrag.js"></script>
+    <script type="text/javascript" src="uajs/ualog.js"></script>
+    <script type="text/javascript" src="uajs/uajthl.js"></script>
+    <script type="text/javascript" src="uajs/less.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script src="app.js" defer></script>
+    <!--  -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f06420" />
+    <!--  -->
+    <title>pwaes4</title>
+  </head>
+
+  <body>
+    <div id="page">
+      <div class="header">
+        <div id="menu" class="menu">
+          <ul>
+            <li>
+              <a href="#">Menu</a>
+              <ul>
+                <li><a href="javascript:clear();">clear</a></li>
+                <li><a href="javascript:fn0();">anag.json</a></li>
+                <li><a href="javascript:fn1();">anag.json</a></li>
+                <li><a href="javascript:fn2();">anag20.json</a></li>
+                <li><a href="javascript:fn3();">test prn</a></li>
+                <li><a href="javascript:fn4();">test log</a></li>
+                <li><a href="javascript:fn5('fox1');">image1</a></li>
+                <li><a href="javascript:fn5('fox2');">image2</a></li>
+                <li><a href="javascript:fn5('fox3');">image3</a></li>
+                <li><a href="javascript:fn5('fox4');">image4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">SW</a>
+              <ul>
+                <li><a href="javascript:clearCaches();">clearCaches</a></li>
+                <li><a href="javascript:unregist();">unregist</a></li>
+                <li><a href="javascript:unregistAll();">unregistAll</a></li>
+                <li><a href="javascript:UaLog.toggle();">Toggle Log</a></li>
+                <li><a href="javascript:toggleUaLog();">Toggle SW Log</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:reset();">Reset</a>
+            </li>
+            <li>
+              <a href="javascript:reload();">Reload</a>
+            </li>
+          </ul>
+        </div>
+        <div id="hbar" class="hbar">
+        </div>
+      </div>
+      <div class="middle">
+        <!-- <div class="main0">
+          <div id="m00" class="msg"> </div>
+          <div id="m01" class="msg"> </div>
+          <div id="m02" class="msg"> </div>
+          <div id="m03" class="msg"> </div>
+        </div> -->
+        <div id="m1" class="main1">
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    UaLog.setXY(500, 50).setZ(11).new().toggle();
+    (function () {
+      const ul = document.querySelector("#menu ul");
+      const li_lst = ul.querySelectorAll("li");
+      const ul_lst = ul.querySelectorAll("ul");
+      let li_select = null;
+      const closed = "closed";
+
+      const close_submenu = function () {
+        for (const ul of ul_lst)
+          ul.classList.add(closed);
+      };
+
+      const select = function (li) {
+        const ul = li.querySelector("ul");
+        if (!!ul) {
+          if (li != li_select) {
+            ul.classList.remove(closed);
+            li_select = li;
+          } else {
+            li_select = null;
+          }
+        } else
+          li_select = null;
+      };
+      // 
+      for (let li of li_lst) {
+        li.addEventListener("click", (e) => {
+          e.stopImmediatePropagation();
+          close_submenu();
+          select(li);
+        });
+      }
+      close_submenu();
+    })();
+  </script>
+
+</html>

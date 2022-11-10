@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "version": "1.0.1",
+  "name": "pwaes1",
+  "short_name": "pwaes1",
+  "description": "Progressive Web App pwaes1",
+  "theme_color": "#ff4500",
+  "background_color": "#333333",
+  "display": "fullscreen",
+  "start_url": "/ua/pwaes1/index.html",
+  "icons": [
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}

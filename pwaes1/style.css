@@ -1,0 +1,89 @@
+form,
+table,
+td,
+input,
+label,
+div,
+body {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+body {
+    background: #000000;
+    color: #ffffff;
+
+}
+
+a {
+    color: #f7e087;
+    text-decoration: none
+}
+
+a:hover {
+    color: #63f4b5;
+    text-decoration: underline
+}
+
+a:focus {
+    color: #ef4f3a;
+}
+
+
+div {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+div.container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    font-weight: normal;
+}
+
+#div0 {
+    width: 150px;
+    border: 1px solid #0095ff;
+}
+
+#div1 {
+    width: 200px;
+    border: 1px solid #22ff00;
+    margin-left: 5px;
+}
+
+#div2 {
+    width: 400px;
+    border: 1px solid #22ff00;
+    margin-left: 5px;
+}
+
+#div0 ul {
+    padding: 0px 3px 3px 5px;
+    margin: 2px;
+}
+
+#div0 li {
+    padding: 2px 0px 0px 0px;
+    margin: 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+#div0 li.a {
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+}
+
+.msg {
+    border: 1px solid #ffffff;
+    margin: 2px;
+    padding: 2px;
+    min-height: 30px;
+}
