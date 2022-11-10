@@ -5,14 +5,6 @@
 @fserif: "Ties New Roman", Georgia, serif;
 @fsans: arial, verdana, sans-serif;
 
-.border0 {
-  border: 2px dotted #ff0000;
-}
-
-.border1 {
-  border: 2px dotted #0000ff;
-}
-
 html,
 body,
 div,
@@ -33,9 +25,13 @@ button {
   font-family: @fserif;
 }
 
+html {
+  background-color: #ffffff;
+}
+
 body {
   // position: relative;
-  padding: 5px;
+  padding: 0;
   margin: 0 5px;
   overflow-y: auto;
   overflow-x: auto;
@@ -43,7 +39,7 @@ body {
 }
 
 #page {
-  width: 90%;
+  width: 100%;
   height: 600px;
   max-height: 600px;
   display: flex;
@@ -119,12 +115,14 @@ div.menu {
           text-decoration: underline;
         }
       }
+
       ul {
         display: block;
         position: absolute;
         top: @menu_sub_top;
         left: 0;
         width: 100%;
+
         li {
           a {
             padding-left: 5px;
@@ -144,9 +142,11 @@ div.menu {
 
 div.hbar {
   width: 90%;
-  padding-top: 10px;;
+  padding-top: 10px;
+  ;
   font-size: 15px;
-  font-weight: bold;;
+  font-weight: bold;
+  ;
   text-align: center;
   background: @color_0c;
   color: #250f02;

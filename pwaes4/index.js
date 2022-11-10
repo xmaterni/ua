@@ -111,7 +111,7 @@ const fn5 = function (name) {
     document.getElementById("m1").innerHTML = "";
     const img = document.createElement("img");
     img.src = "/ua/pwaes4/imgs/" + name + ".jpg";
-    img.style.width = "100%";
+    img.style.height = "100%";
     document.getElementById("m1").appendChild(img);
     const audio = new Audio("/ua/pwaes4/sounds/" + name + ".mp3");
     audio.play();
