@@ -55,70 +55,45 @@ img {
   justify-content: space-between;
 }
 
-@head_height: 35px;
 
 div.header {
-  min-height: @head_height;
-  max-height: @head_height;
+  flex:1;
   display: flex;
   flex-direction: row;
   justify-content: start;
-  // justify-content: space-between;
   align-items: stretch;
   flex-wrap: nowrap;
-  // background-color: #000000;
 }
 
 div.hmenu{
   flex:1;
+  background-color: #27e0c4;
 }
 
 div.hbar {
-  flex:3;
+  flex:2;
   padding-top: 10px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   background: @color_0c;
   color: #250f02;
+  background-color: #f0eb50;
 }
 
+
 div.middle {
+  flex:12;
   background: @color_0d;
   color: @color_0a;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  height: 100%;
+  // flex-direction: row;
+  // align-items: stretch;
+  // justify-content: flex-start;
+  // flex-wrap: nowrap;
+  // height: 100%;
   border: 1px solid #7f3d17;
   box-sizing: border-box;
 }
 
-// div.main0 {
-//   background: @color_0d;
-//   color: @color_0a;
-//   text-align: left;
-//   min-width: 5%;
-//   border-right: 1px solid #7a5151;
-//   display: flex;
-//   flex-direction: column;
-//   flex-wrap: nowrap;
-//   align-items: stretch;
-//   justify-content: space-between;
-// }
 
-// div.msg {
-//   font-size: 16px;
-//   background: darken(@color_0d, 10%);
-//   height: 24%;
-// }
-
-div.main1 {
-  font-size: 16px;
-  background: @color_0d;
-  color: @color_0a;
-  text-align: left;
-  // width: 100%;
-}
