@@ -62,9 +62,11 @@ div.header {
   max-height: @head_height;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  // justify-content: start;
+  justify-content: space-between;
   align-items: stretch;
   flex-wrap: nowrap;
+  background-color: #000000;
 }
 
 // @menu_height: @head_height;
@@ -145,14 +147,15 @@ div.header {
 
 // }
 
+div.hmenu{
+  flex:1;
+}
 
 div.hbar {
-  width: 90%;
+  flex:3;
   padding-top: 10px;
-  ;
   font-size: 15px;
   font-weight: bold;
-  ;
   text-align: center;
   background: @color_0c;
   color: #250f02;
