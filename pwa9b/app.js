@@ -22,7 +22,7 @@ const app_log = function (txt) {
 };
 
 
-const SW_NAME = "/ua/pwaes4/sw.js";
+const SW_NAME = "/ua/pwa9b/sw.js";
 
 let SW_STATE = "unregistred";
 

@@ -1,3 +1,5 @@
+/** @format */
+
 // .b0 {
 //     background-color: #f71313 !important;
 // }
@@ -27,162 +29,159 @@
 @fsize-menu-title: calc(10px + 1vw);
 @fsize-menu-a: calc(10px + 1vw);
 
-
 div.menu-h {
-    // .b3;
-    background-color: @bck-menu-boxes;
-    position: fixed;
+  // .b3;
+  background-color: @bck-menu-boxes;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 5vh;
+  z-index: 1;
+
+  .menu-btn {
+    appearance: none;
+  }
+
+  .menu-btn:checked {
+    & ~ div.menu-boxes {
+      left: 0 !important;
+    }
+  }
+
+  .menu-btn:checked {
+    & + .menu-icon {
+      border: 1px solid @frg-menu-border;
+      // background-color: @bck-menu-hover;
+
+      .nav-icon {
+        transform: rotate(45deg);
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .menu-icon {
+    box-sizing: border-box;
+    background-color: inherit;
+    display: block;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    min-height: 5vh;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 2px 2px;
     z-index: 1;
 
-    .menu-btn {
-        appearance: none;
+    .nav-icon {
+      background-color: @frg-menu-icon;
+      display: block;
+      position: absolute;
+      top: 14px;
+      left: 0;
+      width: 28px;
+      height: 2px;
+      transition-duration: 0.25s;
     }
 
-    .menu-btn:checked {
-        &~div.menu-boxes {
-            left: 0 !important;
-        }
+    .nav-icon::before,
+    .nav-icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: inherit;
+      width: inherit;
+      height: inherit;
     }
 
-    .menu-btn:checked {
-        &+.menu-icon {
-            border: 1px solid @frg-menu-border;
-            // background-color: @bck-menu-hover;
-
-            .nav-icon {
-                transform: rotate(45deg);
-
-                &::before {
-                    top: 0;
-                }
-
-                &::after {
-                    top: 0;
-                    transform: rotate(90deg);
-                }
-            }
-        }
+    .nav-icon::before {
+      top: -8px;
     }
 
-    .menu-icon {
-        box-sizing: border-box;
-        background-color: inherit;
+    .nav-icon::after {
+      top: 8px;
+    }
+  }
+
+  //
+
+  div.menu-boxes {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: @bck-menu-boxes;
+    position: absolute;
+    padding-top: 30px;
+    padding-left: 40px;
+    top: 0;
+    left: -2000px;
+    transition: left 0.5s ease-out;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow-y: auto;
+    overflow-x: auto;
+
+    div.menu-box {
+      background-color: @bck-menu-box;
+      box-sizing: border-box;
+      flex: 1;
+      min-width: 300px;
+      padding: 0;
+
+      div.menu-title {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        padding: 2px 2px;
-        z-index: 1;
+        padding: 5px 0;
+        background-color: @bck-menu-title;
+        color: @frg-menu;
+        text-align: center;
+        font-size: @fsize-menu-title;
+        font-weight: bold;
+        font-style: italic;
+      }
 
-        .nav-icon {
-            background-color: @frg-menu-icon;
-            display: block;
-            position: absolute;
-            top: 14px;
-            left: 0;
-            width: 28px;
-            height: 2px;
-            transition-duration: .25s;
-        }
-
-        .nav-icon::before,
-        .nav-icon::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            background-color: inherit;
-            width: inherit;
-            height: inherit;
-        }
-
-        .nav-icon::before {
-            top: -8px;
-        }
-
-        .nav-icon::after {
-            top: 8px;
-        }
-    }
-
-    // 
-
-    div.menu-boxes {
-        box-sizing: border-box;
-        width: 100vw;
-        height: 100vh;
-        background-color: @bck-menu-boxes;
-        position: absolute;
-        padding-top: 30px;
-        padding-left: 40px;
-        top: 0;
-        left:-2000px;
-        transition: left 0.5s ease-out;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: stretch;
-        overflow-y: auto;
-        overflow-x: auto;
+        flex-direction: column;
+        border-top: 1px solid @frg-menu-border;
 
-        div.menu-box {
-            background-color: @bck-menu-box;
-            box-sizing: border-box;
-            flex: 1;
-            min-width: 300px;
-            padding: 0;
+        li {
+          border-left: 1px solid @frg-menu-border;
+          border-right: 1px solid @frg-menu-border;
+          border-bottom: 1px solid @frg-menu-border;
 
-            div.menu-title {
-                display: block;
-                padding: 5px 0;
-                background-color: @bck-menu-title;
-                color: @frg-menu;
-                text-align: center;
-                font-size: @fsize-menu-title;
-                font-weight: bold;
-                font-style: italic;
-            }
+          a {
+            color: @frg-menu;
+            font-size: @fsize-menu-a;
+            font-weight: bold;
+            display: block;
+            margin: 0;
+            padding: 10px 5px;
+            text-align: left;
+            text-decoration: none;
+          }
 
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                border-top: 1px solid @frg-menu-border;
-
-                li {
-                    border-left: 1px solid @frg-menu-border;
-                    border-right: 1px solid @frg-menu-border;
-                    border-bottom: 1px solid @frg-menu-border;
-
-                    a {
-                        color: @frg-menu;
-                        font-size: @fsize-menu-a;
-                        font-weight: bold;
-                        display: block;
-                        margin: 0;
-                        padding: 10px 5px;
-                        text-align: left;
-                        text-decoration: none;
-                    }
-
-                    &:hover {
-                        text-decoration: underline;
-                        background-color: @bck-menu-hover;
-                        color: @frg-menu-hover;
-
-                    }
-                }
-            }
+          &:hover {
+            text-decoration: underline;
+            background-color: @bck-menu-hover;
+            color: @frg-menu-hover;
+          }
         }
+      }
     }
-
+  }
 }

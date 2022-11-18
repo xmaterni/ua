@@ -71,40 +71,41 @@ const postMessageToClients = function (message) {
 
 
 
-const CACHE_NAME = "pwaes4_2";
+const CACHE_NAME = "pwa9b_2";
 
 const config = {
     version: "sw_3",
     staticCacheItems: [
-        "/ua/pwaes4/index.html",
-        "/ua/pwaes4/style.less",
+        "/ua/pwa9b/index.html",
+        "/ua/pwa9b/style.less",
 
-        "/ua/pwaes4/icons/icon-144x144.png",
+        "/ua/pwa9b/icons/icon-144x144.png",
+        "/ua/pwa9b/icons/icon-512x512.png",
 
-        "/ua/pwaes4/imgs/fox1.jpg",
-        "/ua/pwaes4/imgs/fox2.jpg",
-        "/ua/pwaes4/imgs/fox3.jpg",
-        "/ua/pwaes4/imgs/fox4.jpg",
+        "/ua/pwa9b/imgs/fox1.jpg",
+        "/ua/pwa9b/imgs/fox2.jpg",
+        "/ua/pwa9b/imgs/fox3.jpg",
+        "/ua/pwa9b/imgs/fox4.jpg",
 
-        "/ua/pwaes4/sounds/fox1.mp3",
-        "/ua/pwaes4/sounds/fox2.mp3",
-        "/ua/pwaes4/sounds/fox3.mp3",
-        "/ua/pwaes4/sounds/fox4.mp3",
+        "/ua/pwa9b/sounds/fox1.mp3",
+        "/ua/pwa9b/sounds/fox2.mp3",
+        "/ua/pwa9b/sounds/fox3.mp3",
+        "/ua/pwa9b/sounds/fox4.mp3",
 
-        "/ua/pwaes4/uajs/uawindow.js",
-        "/ua/pwaes4/uajs/uadrag.js",
-        "/ua/pwaes4/uajs/ualog.js",
-        "/ua/pwaes4/uajs/uajthl.js",
-        "/ua/pwaes4/uajs/less.min.js",
+        "/ua/pwa9b/uajs/uawindow.js",
+        "/ua/pwa9b/uajs/uadrag.js",
+        "/ua/pwa9b/uajs/ualog.js",
+        "/ua/pwa9b/uajs/uajthl.js",
+        "/ua/pwa9b/uajs/less.min.js",
 
-        "/ua/pwaes4/index.js",
-        "/ua/pwaes4/app.js",
-        // "/ua/pwaes4/sw.js",
+        "/ua/pwa9b/index.js",
+        "/ua/pwa9b/app.js",
+        // "/ua/pwa9b/sw.js",
 
-        "/ua/pwaes4/data/anag.json",
-        "/ua/pwaes4/data/anag20.json",
+        "/ua/pwa9b/data/anag.json",
+        "/ua/pwa9b/data/anag20.json",
 
-        "/ua/pwaes4/favicon.ico"
+        "/ua/pwa9b/favicon.ico"
     ]
 };
 
