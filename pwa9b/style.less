@@ -1,0 +1,127 @@
+html,
+body,
+div,
+span,
+table,
+td,
+label,
+p,
+a,
+input,
+ul,
+li,
+button {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media(max-width:900px) {
+    div.d1 {
+        background-color: #e6c44c !important;
+    }
+}
+
+@media(max-width:700px) {
+    div.d1 {
+        background-color: #844803 !important;
+    }
+}
+
+@media(max-width:500px) {
+    div.d1 {
+        background-color: #ee550d !important;
+    }
+}
+
+// .brd0 {
+//     border: 1px solid red;
+// }
+
+// .brd1 {
+//     border: 1px solid green;
+// }
+
+// .brd1 {
+//     border: 1px solid blue;
+// }
+
+// .bck0 {
+
+//     background-color: red;
+// }
+
+// .bck1 {
+//     background-color: green;
+// }
+
+// .ckd1 {
+//     background-color: blue;
+// }
+
+
+html {
+    background-color: #e5c71c;
+}
+
+
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: #0fa13b;
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+@bck-container: #000000;
+@bck-item: lighten(@bck-container, 10%);
+@bck-item0: lighten(@bck-container, 20%);
+@bck-item1: lighten(@bck-container, 40%);
+@bck-item2: lighten(@bck-container, 60%);
+
+@frg-conatainer: #ffffff;
+@fsize-container: calc(10px + 1vw);
+
+div.container {
+    // .brd0;
+    box-sizing: border-box;
+    position: relative;
+    top: 5vh;
+    left: 0;
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    div.item {
+        box-sizing: border-box;
+        min-height: 50px;
+        margin: 0;
+        padding: 0;
+        font-size: @fsize-container;
+        color: @frg-conatainer;
+        background-color: @bck-item;
+    }
+
+    div.item0 {
+        background-color: @bck-item0;
+        flex: 1;
+    }
+
+    div.item1 {
+        background-color: @bck-item1;
+        flex: 10;
+    }
+
+    div.item2 {
+        background-color: @bck-item2;
+        flex: 2;
+    }
+
+}

@@ -1,0 +1,96 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9b</title>
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+    <link rel="stylesheet/less" type="text/css" href="menu_h.less" />
+    <script type="text/javascript" src="less.js"></script>
+    <!--  -->
+    <script type="text/javascript" src="uajs/uawindow.js"></script>
+    <script type="text/javascript" src="uajs/uadrag.js"></script>
+    <script type="text/javascript" src="uajs/ualog.js"></script>
+    <script type="text/javascript" src="uajs/uajthl.js"></script>
+    <script type="text/javascript" src="uajs/less.min.js"></script>
+    <!--  -->
+    <script type="text/javascript" src="index.js"></script>
+    <script src="app.js" defer></script>
+    <!--  -->
+    <link rel="manifest" href="manifest.json" />
+    <!-- <meta name="theme-color" content="#f06420" /> -->
+    <!--  -->
+  </head>
+
+  <body>
+    <div class="menu-h">
+      <input id="menu-btn" class="menu-btn" type="checkbox" />
+      <label for="menu-btn" class="menu-icon">
+        <span class="nav-icon"></span>
+      </label>
+
+      <div class="menu-boxes">
+        <div class="menu-box">
+          <div class="menu-title">Menu 1</div>
+          <ul>
+            <li><a href="#" onCLick="op(this);">Option A 0</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 1</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 2</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 3</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 4</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 5</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 6</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 7</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 8</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 9</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 10</a></li>
+            <li><a href="#" onCLick="op(this);">Option A 11</a></li>
+          </ul>
+        </div>
+
+        <div class="menu-box">
+          <div class="menu-title">Menu 2</div>
+          <ul>
+            <li><a href="#" onCLick="op(this);">Option B 0</a></li>
+            <li><a href="#" onCLick="op(this);">Option B 1</a></li>
+            <li><a href="#" onCLick="op(this);">Option B 2</a></li>
+            <li><a href="#" onCLick="op(this);">Option B 3</a></li>
+            <li><a href="#" onCLick="op(this);">Option B 4</a></li>
+            <li><a href="#" onCLick="op(this);">Option B 5</a></li>
+            <li><a href="#" onCLick="op(this);">Option B 6</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="hbar" class="item item0">sezione 0</div>
+      <div id="m1" class="item item1">sezione 1</div>
+      <div class="item item2">sezione 2</div>
+    </div>
+  </body>
+</html>
+<script>
+  UaLog.setXY(500, 50).setZ(11).new().toggle();
+  (function () {
+    const bt = document.querySelector("#menu-btn");
+    const mc = document.querySelector("div.menu-boxes");
+    const alst = document.querySelectorAll(".menu-h a");
+    for (const a of alst)
+      a.addEventListener("click", (e) => {
+        bt.checked = false;
+      });
+    // gestione hover
+    // const bl = document.querySelector(".menu-h .menu-lbl");
+    // bl.addEventListener("mouseenter", (e) => {
+    //   bt.checked = true;
+    // });
+    // const bx = document.querySelector(".menu-h .menu-box");
+    // bx.addEventListener("mouseleave", (e) => {
+    //   bt.checked = false;
+    // });
+  })();
+</script>
