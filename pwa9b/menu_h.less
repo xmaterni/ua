@@ -1,12 +1,25 @@
 /** @format */
+.b0 {
+    background-color: red;
+}
+
+.b1 {
+    background-color: green;
+}
+
+.b2 {
+    background-color: blue;
+}
 
 @frg-menu-icon: #fbf5f5;
 @bck-menu: #201e1e;
 @bck-menu-boxes: lighten(@bck-menu, 5%);
-@bck-menu-title: lighten(@bck-menu, 7%);
+@bck-menu-title: lighten(@bck-menu, 20%);
 @bck-menu-box: lighten(@bck-menu, 10%);
-@frg-menu-border: lighten(@bck-menu, 20%);
+
+@frg-menu-border: lighten(@bck-menu, 30%);
 @frg-menu: #fafafa;
+
 @bck-menu-hover: lighten(@bck-menu, 20%);
 @frg-menu-hover: #ffffff;
 
@@ -14,8 +27,8 @@
 @fsize-menu-a: calc(8px + 1vw);
 
 div.menu-h {
-  // .b3;
-  background-color: @bck-menu-boxes;
+ .b0;
+  // background-color: @bck-menu-boxes;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,11 +49,9 @@ div.menu-h {
       // background-color: @bck-menu-hover;
       .nav-icon {
         transform: rotate(45deg);
-
         &::before {
           top: 0;
         }
-
         &::after {
           top: 0;
           transform: rotate(90deg);
@@ -55,7 +66,8 @@ div.menu-h {
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    // left: 0;
+    right: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -90,12 +102,11 @@ div.menu-h {
 
   div.menu-boxes {
     box-sizing: border-box;
-    //  width: 30vw;
     height: 100vh;
     background-color: @bck-menu-boxes;
     position: absolute;
-    padding-top: 30px;
-    padding-left: 40px;
+    // padding-top: 30px;
+    // padding-left: 40px;
     top: 0;
     // left: -2000px;
     transition: left 0.5s ease-out;
@@ -107,21 +118,22 @@ div.menu-h {
     overflow-y: auto;
     overflow-x: auto;
     div.menu-box {
+      // min-width: 200px;
       background-color: @bck-menu-box;
       box-sizing: border-box;
       flex: 1;
       padding: 0;
-      div.menu-title {
-        display: block;
-        padding: 5px 0;
+      .menu-title {
+        padding: 2pxpx 0;
         background-color: @bck-menu-title;
         color: @frg-menu;
+        border-right: 1px solid @frg-menu-border;
         text-align: center;
         font-size: @fsize-menu-title;
-        font-weight: bold;
+        // font-weight: bold;
         font-style: italic;
       }
-      ul {
+        ul {
         list-style: none;
         margin: 0;
         padding: 0;
@@ -143,7 +155,7 @@ div.menu-h {
             text-align: left;
             text-decoration: none;
           }
-          &:hover {
+          a:hover {
             text-decoration: underline;
             background-color: @bck-menu-hover;
             color: @frg-menu-hover;

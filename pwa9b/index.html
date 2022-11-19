@@ -9,7 +9,7 @@
     <title>9b</title>
     <link rel="stylesheet/less" type="text/css" href="style.less" />
     <link rel="stylesheet/less" type="text/css" href="menu_h.less" />
-    
+
     <script type="text/javascript" src="uajs/less.min.js"></script>
     <!--  -->
     <script type="text/javascript" src="uajs/uawindow.js"></script>
@@ -28,6 +28,7 @@
 
   <body>
     <div class="menu-h">
+      Test Menu_HR
       <input id="menu-btn" class="menu-btn" type="checkbox" />
       <label for="menu-btn" class="menu-icon">
         <span class="nav-icon"></span>
@@ -36,22 +37,27 @@
       <div class="menu-boxes">
         <div class="menu-box">
           <ul>
+            <li class="menu-title">Menu</li>
             <li><a href="javascript:clear();">clear</a></li>
             <li><a href="javascript:fn0();">anag.json</a></li>
             <li><a href="javascript:fn1();">anag.json</a></li>
             <li><a href="javascript:fn2();">anag20.json</a></li>
-            <li><a href="javascript:fn3();">test prn</a></li>
-            <li><a href="javascript:fn4();">test log</a></li>
             <li><a href="javascript:fn5('fox1');">image1</a></li>
             <li><a href="javascript:fn5('fox2');">image2</a></li>
             <li><a href="javascript:fn5('fox3');">image3</a></li>
             <li><a href="javascript:fn5('fox4');">image4</a></li>
-
-            <li><a href="javascript:clearCaches();">clearCaches</a></li>
-            <li><a href="javascript:unregist();">unregist</a></li>
-            <li><a href="javascript:unregistAll();">unregistAll</a></li>
+            <li class="menu-title">Log</li>
             <li><a href="javascript:UaLog.toggle();">Toggle Log</a></li>
             <li><a href="javascript:toggleUaLog();">Toggle SW Log</a></li>
+            <li><a href="javascript:fn3();">test prn</a></li>
+            <li><a href="javascript:fn4();">test log</a></li>
+          </ul>
+        </div>
+        <div class="menu-box">
+          <ul>
+            <li class="menu-title">SW</li>
+            <li><a href="javascript:clearCaches();">clearCaches</a></li>
+            <li><a href="javascript:unregist();">unregist</a></li>
             <li><a href="javascript:reset();">Reset</a></li>
             <li><a href="javascript:reload();">Reload</a></li>
           </ul>
@@ -67,7 +73,7 @@
   </body>
 </html>
 <script>
-  UaLog.setXY(500, 50).setZ(11).new().toggle();
+  UaLog.setXY(400, 100).setZ(11).new().toggle();
   (function () {
     const bt = document.querySelector("#menu-btn");
     const mc = document.querySelector("div.menu-boxes");
