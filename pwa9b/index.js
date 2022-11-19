@@ -2,9 +2,9 @@
 const hbar = "hbar";
 const m1 = "m1";
 
-const o=function(e){
-    const h=e.innerHTML;
-    msg_prn(m1,h);
+const o = function (e) {
+    const h = e.innerHTML;
+    msg_prn(m1, h);
 }
 
 const msg_prn = function (id, txt) {
@@ -120,4 +120,13 @@ const fn5 = function (name) {
     document.getElementById("m1").appendChild(img);
     const audio = new Audio("/ua/pwaes4/sounds/" + name + ".mp3");
     audio.play();
+};
+
+const toggle_test = function () {
+    const e = document.querySelector("div.menu-boxes");
+    e.classList.toggle("menu-test");
+    // if (e.classList.contains("menu-test"))
+    //     e.classList.remove("menu-tese");
+    // else
+    //     e.classList.add("menu-test");
 };
