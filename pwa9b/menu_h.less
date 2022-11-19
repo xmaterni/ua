@@ -1,40 +1,65 @@
 /** @format */
 .b0 {
-    background-color: red;
+  background-color: red;
 }
-
 .b1 {
-    background-color: green;
+  background-color: green;
 }
-
 .b2 {
-    background-color: blue;
+  background-color: #5b5bd8;
+  color: white;
 }
 
-@frg-menu-icon: #fbf5f5;
+.brd0 {
+  border: 1px solid red;
+}
+.brd1 {
+  border: 1px solid green;
+}
+.brd2 {
+  border: 1px solid #eeec53;
+}
+
 @bck-menu: #201e1e;
+@bck-menu-logo: lighten(@bck-menu, 5%);
 @bck-menu-boxes: lighten(@bck-menu, 5%);
 @bck-menu-title: lighten(@bck-menu, 20%);
 @bck-menu-box: lighten(@bck-menu, 10%);
-
-@frg-menu-border: lighten(@bck-menu, 30%);
-@frg-menu: #fafafa;
-
 @bck-menu-hover: lighten(@bck-menu, 20%);
-@frg-menu-hover: #ffffff;
+
+@color-menu: #fafafa;
+@color-menu-logo: #edda0a;
+@color-menu-icon: #fbf5f5;
+@color-menu-title: #ffffff;
+@color-menu-border: lighten(@bck-menu, 30%);
+@color-menu-hover: #ffffff;
 
 @fsize-menu-title: calc(8px + 1vw);
 @fsize-menu-a: calc(8px + 1vw);
 
 div.menu-h {
- .b0;
-  // background-color: @bck-menu-boxes;
+  // .b0;
+  background-color: @bck-menu-boxes;
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  min-height: 5vh;
+  min-height: 4vh;
+  max-height: 4vh;
   z-index: 1;
+  .menu-logo {
+    // .b2;
+    display: block;
+    text-align: center;
+    span {
+      // .b2;
+      padding:5px;
+      background-color: @bck-menu-logo;
+      color: @color-menu-logo;
+      font-size: @fsize-menu-title;
+    }
+  }
   .menu-btn {
     appearance: none;
   }
@@ -45,7 +70,7 @@ div.menu-h {
   }
   .menu-btn:checked {
     & + .menu-icon {
-      border: 1px solid @frg-menu-border;
+      border: 1px solid @color-menu-border;
       // background-color: @bck-menu-hover;
       .nav-icon {
         transform: rotate(45deg);
@@ -74,7 +99,7 @@ div.menu-h {
     padding: 2px 2px;
     z-index: 1;
     .nav-icon {
-      background-color: @frg-menu-icon;
+      background-color: @color-menu-icon;
       display: block;
       position: absolute;
       top: 14px;
@@ -102,7 +127,7 @@ div.menu-h {
 
   div.menu-boxes {
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
     background-color: @bck-menu-boxes;
     position: absolute;
     // padding-top: 30px;
@@ -126,28 +151,27 @@ div.menu-h {
       .menu-title {
         padding: 2pxpx 0;
         background-color: @bck-menu-title;
-        color: @frg-menu;
-        border-right: 1px solid @frg-menu-border;
+        color: @color-menu-title;
+        border-right: 1px solid @color-menu-border;
         text-align: center;
         font-size: @fsize-menu-title;
-        // font-weight: bold;
         font-style: italic;
       }
-        ul {
+      ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
-        border-top: 1px solid @frg-menu-border;
+        border-top: 1px solid @color-menu-border;
         li {
           box-sizing: border-box;
-          border-left: 1px solid @frg-menu-border;
-          border-right: 1px solid @frg-menu-border;
-          border-bottom: 1px solid @frg-menu-border;
+          border-left: 1px solid @color-menu-border;
+          border-right: 1px solid @color-menu-border;
+          border-bottom: 1px solid @color-menu-border;
           a {
             white-space: nowrap;
-            color: @frg-menu;
+            color: @color-menu;
             font-size: @fsize-menu-a;
             display: block;
             margin: 0;
@@ -158,7 +182,7 @@ div.menu-h {
           a:hover {
             text-decoration: underline;
             background-color: @bck-menu-hover;
-            color: @frg-menu-hover;
+            color: @color-menu-hover;
           }
         }
       }
