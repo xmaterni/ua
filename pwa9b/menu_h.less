@@ -54,7 +54,7 @@ div.menu-h {
     text-align: center;
     span {
       // .b2;
-      padding:5px;
+      padding: 5px;
       background-color: @bck-menu-logo;
       color: @color-menu-logo;
       font-size: @fsize-menu-title;
@@ -71,16 +71,15 @@ div.menu-h {
   .menu-btn:checked {
     & + .menu-icon {
       border: 1px solid @color-menu-border;
-      // background-color: @bck-menu-hover;
       .nav-icon {
         transform: rotate(45deg);
-        &::before {
-          top: 0;
-        }
-        &::after {
-          top: 0;
-          transform: rotate(90deg);
-        }
+      }
+      .nav-icon::before {
+        top: 0;
+      }
+      .nav-icon::after {
+        top: 0;
+        transform: rotate(90deg);
       }
     }
   }
