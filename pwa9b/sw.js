@@ -3,11 +3,11 @@
 
 let ualog_status = false;
 
-const rqs_type_test="test";
-const rqs_type_cmd="cmd";
+const rqs_type_test = "test";
+const rqs_type_cmd = "cmd";
 
-const rsp_type_log="log";
-const rsp_type_test="test";
+const rsp_type_log = "log";
+const rsp_type_test = "test";
 
 const swlog = function (txt) {
     console.log(txt);
@@ -78,6 +78,18 @@ const config = {
     staticCacheItems: [
         "/ua/pwa9b/index.html",
         "/ua/pwa9b/style.less",
+        "/ua/pwa9b/menu_h.less",
+
+        "/ua/pwa9b/uajs/less.min.js",
+
+        "/ua/pwa9b/index.js",
+        "/ua/pwa9b/app.js",
+        // "/ua/pwa9b/sw.js",
+
+        "/ua/pwa9b/uajs/uawindow.js",
+        "/ua/pwa9b/uajs/uadrag.js",
+        "/ua/pwa9b/uajs/ualog.js",
+        "/ua/pwa9b/uajs/uajthl.js",
 
         "/ua/pwa9b/icons/icon-144x144.png",
         "/ua/pwa9b/icons/icon-512x512.png",
@@ -92,16 +104,6 @@ const config = {
         "/ua/pwa9b/sounds/fox3.mp3",
         "/ua/pwa9b/sounds/fox4.mp3",
 
-        "/ua/pwa9b/uajs/uawindow.js",
-        "/ua/pwa9b/uajs/uadrag.js",
-        "/ua/pwa9b/uajs/ualog.js",
-        "/ua/pwa9b/uajs/uajthl.js",
-        "/ua/pwa9b/uajs/less.min.js",
-
-        "/ua/pwa9b/index.js",
-        "/ua/pwa9b/app.js",
-        // "/ua/pwa9b/sw.js",
-
         "/ua/pwa9b/data/anag.json",
         "/ua/pwa9b/data/anag20.json",
 
@@ -110,7 +112,7 @@ const config = {
 };
 
 self.addEventListener('install', (event) => {
-    swlog("install "+ config.version);
+    swlog("install " + config.version);
     event.waitUntil(caches.open(CACHE_NAME)
         .then((cache) => cache.addAll(config.staticCacheItems))
         .then(() => self.skipWaiting())
@@ -118,7 +120,7 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-    swlog("activate "+ config.version);
+    swlog("activate " + config.version);
     event.waitUntil(
         caches.keys().then((keys) => {
             return Promise.all(
@@ -216,8 +218,8 @@ self.addEventListener('fetch', (event) => {
     const mode = event.request.mode;
     const info = "";
     // 
-    let strategy ="n";
-    if (["document", "style", "image","audio"].includes(dest))
+    let strategy = "n";
+    if (["document", "style", "image", "audio"].includes(dest))
         strategy = "cn";
     else if (["script"].includes(dest))
         strategy = "svr";
