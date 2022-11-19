@@ -5,7 +5,7 @@ const m1 = "m1";
 const o = function (e) {
     const h = e.innerHTML;
     msg_prn(m1, h);
-}
+};
 
 const msg_prn = function (id, txt) {
     document.getElementById(id).innerHTML = txt;

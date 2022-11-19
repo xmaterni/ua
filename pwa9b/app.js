@@ -4,7 +4,6 @@ const rqs_type_test = "test";
 const rqs_type_log = "log";
 const rqs_type_cmd = "cmd";
 
-
 const log = function (...args) {
   console.log(...args);
 };
@@ -76,27 +75,32 @@ const postMessageToWorker = function (msg) {
 };
 
 const receivesMessage = function (event) {
-  const data = event.data;
-  const rsp_type = data.rsp_type || "";
+  const msg = event.data;
+  const rsp_type = msg.rsp_type || "";
 
   if (rsp_type == rqs_type_test) {
-    const out = data.out || "";
+    const out = msg.out || "";
     if (out == 'prn') {
-      const html = json2str(data, "<br>");
+      const html = json2str(msg, "<br>");
       app_log(html);
-    }
-    else if (out == "log") {
-      const txt = json2str(data, "<br>");
-      ualog(txt);
-      ualog("");
     }
     else {
       alert(`Error(2) app.js response \n ${out}`);
     }
   }
   else if (rsp_type == rqs_type_log) {
-    const txt = data.rsp;
+    const txt = msg.rsp;
     ualog(txt);
+  }
+  else if (rsp_type == rqs_type_cmd) {
+    const rsp_name=msg.rsp_name || "";
+    if(rsp_name=="cache_list"){
+      const html = json2str(msg.rsp, "<br>");
+      app_log(html);
+    }
+    else{
+      app_log(`Response Error <br> rsp_name:${rsp_nsmr}`);
+    }
   }
   else {
     app_log(`Response Error <br> ${rsp_type}`);
@@ -145,3 +149,11 @@ function toggleUaLog() {
   postMessageToWorker(msg);
 }
 
+function readCache() {
+  const msg = {
+    rqs_type: rqs_type_cmd,
+    rqs: "read_cache"
+  };
+  postMessageToWorker(msg);
+
+}

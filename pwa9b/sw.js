@@ -1,6 +1,9 @@
 /*jshint esversion:8 */
 // "use strict";
 
+const CACHE_NAME = "pwa9b_2";
+
+
 let ualog_status = false;
 
 const rqs_type_test = "test";
@@ -8,6 +11,7 @@ const rqs_type_cmd = "cmd";
 
 const rsp_type_log = "log";
 const rsp_type_test = "test";
+const rsp_type_data = "data";
 
 const swlog = function (txt) {
     console.log(txt);
@@ -53,6 +57,12 @@ self.addEventListener('message', (event) => {
             if (rqs == "toggle_ualog") {
                 ualog_status = !ualog_status;
             }
+            else if (rqs == "read_cache") {
+                readCache();
+            }
+            else {
+                swlog(`rq Error: ${rqs}`);
+            }
         }
         else {
             swlog(`rqs_type Error: ${rqs_type}`);
@@ -69,9 +79,25 @@ const postMessageToClients = function (message) {
     });
 };
 
+const readCache = function () {
+    swlog("readCache");
+    caches.open(CACHE_NAME).then((cache)=> {
+        return cache.keys();
+    }).then((requests) => {
+        const lst=[];
+        for (let rqs of requests){
+            const u=rqs.url;
+            lst.push(u);
+        }
+        const msg = {
+            rsp_type:"cmd",
+            rsp_name: "cache_list",
+            rsp: lst
+        };
+        postMessageToClients(msg);
+    });
+};
 
-
-const CACHE_NAME = "pwa9b_2";
 
 const config = {
     version: "sw_3",
