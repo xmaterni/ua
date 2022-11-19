@@ -1,21 +1,5 @@
 /** @format */
 
-// .b0 {
-//     background-color: #f71313 !important;
-// }
-
-// .b1 {
-//     background-color: #ffff0e !important;
-// }
-
-// .b2 {
-//     background-color: #06f469 !important;
-// }
-
-// .b3 {
-//     background-color: #1058e8 !important;
-// }
-
 @frg-menu-icon: #fbf5f5;
 @bck-menu: #201e1e;
 @bck-menu-boxes: lighten(@bck-menu, 5%);
@@ -26,8 +10,8 @@
 @bck-menu-hover: lighten(@bck-menu, 20%);
 @frg-menu-hover: #ffffff;
 
-@fsize-menu-title: calc(10px + 1vw);
-@fsize-menu-a: calc(10px + 1vw);
+@fsize-menu-title: calc(8px + 1vw);
+@fsize-menu-a: calc(8px + 1vw);
 
 div.menu-h {
   // .b3;
@@ -38,22 +22,18 @@ div.menu-h {
   width: 100vw;
   min-height: 5vh;
   z-index: 1;
-
   .menu-btn {
     appearance: none;
   }
-
   .menu-btn:checked {
     & ~ div.menu-boxes {
       left: 0 !important;
     }
   }
-
   .menu-btn:checked {
     & + .menu-icon {
       border: 1px solid @frg-menu-border;
       // background-color: @bck-menu-hover;
-
       .nav-icon {
         transform: rotate(45deg);
 
@@ -81,7 +61,6 @@ div.menu-h {
     cursor: pointer;
     padding: 2px 2px;
     z-index: 1;
-
     .nav-icon {
       background-color: @frg-menu-icon;
       display: block;
@@ -92,7 +71,6 @@ div.menu-h {
       height: 2px;
       transition-duration: 0.25s;
     }
-
     .nav-icon::before,
     .nav-icon::after {
       content: "";
@@ -102,28 +80,24 @@ div.menu-h {
       width: inherit;
       height: inherit;
     }
-
     .nav-icon::before {
       top: -8px;
     }
-
     .nav-icon::after {
       top: 8px;
     }
   }
 
-  //
-
   div.menu-boxes {
     box-sizing: border-box;
-    width: 100vw;
+    //  width: 30vw;
     height: 100vh;
     background-color: @bck-menu-boxes;
     position: absolute;
     padding-top: 30px;
     padding-left: 40px;
     top: 0;
-    left: -2000px;
+    // left: -2000px;
     transition: left 0.5s ease-out;
     display: flex;
     flex-direction: row;
@@ -132,14 +106,11 @@ div.menu-h {
     align-items: stretch;
     overflow-y: auto;
     overflow-x: auto;
-
     div.menu-box {
       background-color: @bck-menu-box;
       box-sizing: border-box;
       flex: 1;
-      min-width: 300px;
       padding: 0;
-
       div.menu-title {
         display: block;
         padding: 5px 0;
@@ -150,7 +121,6 @@ div.menu-h {
         font-weight: bold;
         font-style: italic;
       }
-
       ul {
         list-style: none;
         margin: 0;
@@ -158,23 +128,21 @@ div.menu-h {
         display: flex;
         flex-direction: column;
         border-top: 1px solid @frg-menu-border;
-
         li {
+          box-sizing: border-box;
           border-left: 1px solid @frg-menu-border;
           border-right: 1px solid @frg-menu-border;
           border-bottom: 1px solid @frg-menu-border;
-
           a {
+            white-space: nowrap;
             color: @frg-menu;
             font-size: @fsize-menu-a;
-            font-weight: bold;
             display: block;
             margin: 0;
-            padding: 10px 5px;
+            padding: 5px 5px;
             text-align: left;
             text-decoration: none;
           }
-
           &:hover {
             text-decoration: underline;
             background-color: @bck-menu-hover;

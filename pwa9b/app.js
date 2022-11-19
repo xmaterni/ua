@@ -130,6 +130,7 @@ function clearCaches() {
 function reset() {
   clearCaches();
   unregistAll();
+  reload();
 }
 
 function reload() {
