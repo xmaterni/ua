@@ -107,8 +107,6 @@ const receivesMessage = function (event) {
   }
   else if (rqs_cmd == "read_cache") {
     readCacheRsp(msg);
-    // const txt = json2str(rsp_data, "<br>");
-    // ualog(txt);
   }
   else {
     const s = `ReceiveMessage Error 
