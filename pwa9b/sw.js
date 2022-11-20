@@ -70,12 +70,12 @@ self.addEventListener('message', (event) => {
         }
         else if (rqs_cmd == "read_cache") {
             readCache(rqs);
-            // const fn = async function () {
-            //     const lst = await readCache();
-            //     const msg = buildRspMsgToClients(lst, rqs);
-            //     postMessageToClients(msg);
-            // };
-            // fn();
+            const fn = async function () {
+                const lst = await xreadCache();
+                const msg = buildRspMsgToClients(lst, rqs);
+                postMessageToClients(msg);
+            };
+            fn();
         }
         else {
             const s = `SW Error listener(messag)<br>
@@ -94,9 +94,9 @@ const postMessageToClients = function (message) {
     });
 };
 
-const xreadCache = async function () {
+const xreadCache = async () => {
     swlog("readCache");
-    caches.open(CACHE_NAME).then((cache) => {
+    const urls = await caches.open(CACHE_NAME).then((cache) => {
         return cache.keys();
     }).then((requests) => {
         const lst = [];
@@ -104,19 +104,18 @@ const xreadCache = async function () {
             lst.push(rqs.url);
         return lst;
     });
+    return urls;
 };
 
 const readCache = function (rqs) {
     swlog("readCache");
-    caches.open(CACHE_NAME).then((cache)=> {
+    caches.open(CACHE_NAME).then((cache) => {
         return cache.keys();
     }).then((requests) => {
-        const lst=[];
-        for (let rqs of requests){
-            const u=rqs.url;
-            lst.push(u);
-        }
-        const msg=buildRspMsgToClients(lst,rqs);
+        const lst = [];
+        for (let rqs of requests)
+            lst.push(rqs.url);
+        const msg = buildRspMsgToClients(lst, rqs);
         postMessageToClients(msg);
     });
 };
