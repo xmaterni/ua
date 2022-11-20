@@ -1,8 +1,5 @@
 /*jshint esversion:8 */
 
-const rqs_type_test = "test";
-const rqs_type_log = "log";
-const rqs_type_cmd = "cmd";
 
 const log = function (...args) {
   console.log(...args);
@@ -13,11 +10,11 @@ const ualog = function (...args) {
 };
 
 const app_info = function (txt) {
-  msg_prn(hbar, txt);
+  msg_prn(item0, txt);
 };
 
 const app_log = function (txt) {
-  msg_prn(m1, txt);
+  msg_prn(item1, txt);
 };
 
 
@@ -65,6 +62,16 @@ const json2str = function (js, ln = '\n') {
   return lst.join(ln);
 };
 
+
+const buildMessageToWorker = function (rqs_cmd, rsp_cmd = "", data = "") {
+  const msg = {
+    rqs_cmd: rqs_cmd,
+    rsp_cmd: rsp_cmd,
+    rqs_data: data
+  };
+  return msg;
+};
+
 //post message to worker
 const postMessageToWorker = function (msg) {
   if (navigator.serviceWorker.controller) {
@@ -76,37 +83,43 @@ const postMessageToWorker = function (msg) {
 
 const receivesMessage = function (event) {
   const msg = event.data;
-  const rsp_type = msg.rsp_type || "";
+  const rqs_cmd = msg.rqs_cmd || "";
+  const rsp_cmd = msg.rsp_cmd || "";
+  const rsp_data = msg.rsp_data || "";
 
-  if (rsp_type == rqs_type_test) {
-    const out = msg.out || "";
-    if (out == 'prn') {
-      const html = json2str(msg, "<br>");
-      app_log(html);
+  if (rqs_cmd == "push") {
+    if (rsp_cmd == "log") {
+      ualog(rsp_data);
     }
     else {
-      alert(`Error(2) app.js response \n ${out}`);
+      const s = `ReceiveMessage Error <br> 
+      rqs_cmd:push<br>
+      rsp_cmd:${rsp_cmd} Not Found`;
+      alert(s);
     }
   }
-  else if (rsp_type == rqs_type_log) {
-    const txt = msg.rsp;
-    ualog(txt);
-  }
-  else if (rsp_type == rqs_type_cmd) {
-    const rsp_name=msg.rsp_name || "";
-    if(rsp_name=="cache_list"){
-      const html = json2str(msg.rsp, "<br>");
+
+  else if (rqs_cmd == "test") {
+    if (rsp_cmd == "log") {
+      const html = json2str(rsp_data, "<br>");
+      ualog(html);
+    }
+    else if (rsp_cmd == "prn") {
+      const html = json2str(rsp_data, "<br>");
       app_log(html);
     }
-    else{
-      app_log(`Response Error <br> rsp_name:${rsp_nsmr}`);
-    }
   }
+
+  else if (rqs_cmd == "read_cache") {
+    readCacheRsp(msg);
+  }
+
   else {
-    app_log(`Response Error <br> ${rsp_type}`);
+    const s = `ReceiveMessage Error <br> 
+    rqs_cmd:${rqs_cmd} Not Found`;
+    alert(s);
   }
 };
-
 
 function unregist() {
   if ('serviceWorker' in navigator) {
@@ -142,18 +155,17 @@ function reload() {
 }
 
 function toggleUaLog() {
-  const msg = {
-    rqs_type: rqs_type_cmd,
-    rqs: "toggle_ualog"
-  };
+  const msg = buildMessageToWorker("toggle_ualog");
   postMessageToWorker(msg);
 }
 
 function readCache() {
-  const msg = {
-    rqs_type: rqs_type_cmd,
-    rqs: "read_cache"
-  };
+  const msg = buildMessageToWorker("read_cache",);
   postMessageToWorker(msg);
+}
 
+function readCacheRsp(msg) {
+  const rsp_data = msg.rsp_data || "";
+  const html = json2str(rsp_data, "<br>");
+  app_log(html);
 }

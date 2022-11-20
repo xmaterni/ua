@@ -3,24 +3,13 @@
 
 const CACHE_NAME = "pwa9b_2";
 
-
 let ualog_status = false;
-
-const rqs_type_test = "test";
-const rqs_type_cmd = "cmd";
-
-const rsp_type_log = "log";
-const rsp_type_test = "test";
-const rsp_type_data = "data";
 
 const swlog = function (txt) {
     console.log(txt);
     if (ualog_status) {
-        const data = {
-            rsp_type: rsp_type_log,
-            rsp: txt
-        };
-        postMessageToClients(data);
+        const msg = buildPushMsgToClients(txt, "log");
+        postMessageToClients(msg);
     }
 };
 
@@ -42,30 +31,52 @@ const logRequest = function (request) {
     swlog(".............................");
 };
 
+//messaggio inviato al client dal SW
+const buildPushMsgToClients = function (rsp_data, rsp_cmd = "") {
+    const msg = {
+        rqs_cmd: "push",
+        rsp_cmd: rsp_cmd,
+        rsp_data: rsp_data
+    };
+    return msg;
+};
+
+//messaggio di risposta ad una reques
+const buildRspMsgToClients = function (rsp_data, rqs = {}) {
+    const rqs_cmd = rqs.rqs_cmd || "none";
+    const rsp_cmd = rqs.rsp_cmd || "none";
+    const msg = {
+        rqs_cmd: rqs_cmd,
+        rsp_cmd: rsp_cmd,
+        rsp_data: rsp_data
+    };
+    return msg;
+};
 
 // receives message
 self.addEventListener('message', (event) => {
     if (event.data) {
-        const rqs_type = event.data.rqs_type || "";
-        if (rqs_type == rqs_type_test) {
-            event.data.rsp_type = rsp_type_test;
-            event.data.rsp = "received test message from client";
-            postMessageToClients(event.data);
+        const rqs = event.data || {};
+        const rqs_cmd = rqs.rqs_cmd || "none";
+        const rqs_data = rqs.rqs_data || "";
+
+        if (rqs_cmd == "test") {
+            const data = `received from client ${rqs_data}`;
+            const msg = buildRspMsgToClients(data, rqqs);
+            postMessageToClients(msg);
         }
-        else if (rqs_type == rqs_type_cmd) {
-            const rqs = event.data.rqs || "";
-            if (rqs == "toggle_ualog") {
-                ualog_status = !ualog_status;
-            }
-            else if (rqs == "read_cache") {
-                readCache();
-            }
-            else {
-                swlog(`rq Error: ${rqs}`);
-            }
+        else if (rqs_cmd == "toggle_ualog") {
+            ualog_status = !ualog_status;
+        }
+        else if (rqs == "read_cache") {
+            const lst = readCache();
+            const msg = buildRspMsgToClients(lst, rqqs);
+            postMessageToClients(msg);
         }
         else {
-            swlog(`rqs_type Error: ${rqs_type}`);
+            const s = `SW Error listener(messag)<br>
+             rqs_cmd: ${rqs_cmd} Not Found.`;
+            swlog(s);
         }
     }
 });
@@ -81,20 +92,15 @@ const postMessageToClients = function (message) {
 
 const readCache = function () {
     swlog("readCache");
-    caches.open(CACHE_NAME).then((cache)=> {
+    caches.open(CACHE_NAME).then((cache) => {
         return cache.keys();
     }).then((requests) => {
-        const lst=[];
-        for (let rqs of requests){
-            const u=rqs.url;
+        const lst = [];
+        for (let rqs of requests) {
+            const u = rqs.url;
             lst.push(u);
         }
-        const msg = {
-            rsp_type:"cmd",
-            rsp_name: "cache_list",
-            rsp: lst
-        };
-        postMessageToClients(msg);
+        return lst;
     });
 };
 

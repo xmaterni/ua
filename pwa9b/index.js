@@ -1,10 +1,10 @@
 /* jshint esversion: 8 */
-const hbar = "hbar";
-const m1 = "m1";
+const item0 = "item0";
+const item1 = "item1";
 
-const o = function (e) {
+const op = function (e) {
     const h = e.innerHTML;
-    msg_prn(m1, h);
+    msg_prn(item1, h);
 };
 
 const msg_prn = function (id, txt) {
@@ -23,7 +23,7 @@ const msg_clear = function (id) {
 
 
 const clear = function () {
-    msg_clear(m1);
+    msg_clear(item1);
 };
 
 const fn0 = function () {
@@ -32,15 +32,15 @@ const fn0 = function () {
             if (!response.ok) {
                 throw new Error("HTTP error, status = " + response.status);
             }
-            msg_prn(m1, response.type);
-            msg_log(m1, response.url);
-            msg_log(m1, response.status);
-            msg_log(m1, response.statusText);
-            msg_log(m1, response.ok);
+            msg_prn(item1, response.type);
+            msg_log(item1, response.url);
+            msg_log(item1, response.status);
+            msg_log(item1, response.statusText);
+            msg_log(item1, response.ok);
             return response.text();
         })
         .then(function (text) {
-            msg_log(m1, text);
+            msg_log(item1, text);
         })
         .catch(function (err) {
             alert("fn0\n " + err);
@@ -65,7 +65,7 @@ const fn1 = function () {
                  `;
             };
             const html = UaJthl().set_template(fnh).append(data).text();
-            msg_prn(m1, html);
+            msg_prn(item1, html);
         })
         .catch(function (err) {
             alert("fn1\n " + err);
@@ -87,7 +87,7 @@ const fn2 = function () {
             const jt = UaJthl().set_template(template);
             jt.append_json_array(data, 1);
             const html = jt.text();
-            msg_prn(m1, html);
+            msg_prn(item1, html);
         })
         .catch(function (err) {
             alert("fn2\n " + err);
@@ -95,29 +95,22 @@ const fn2 = function () {
 };
 
 const fn3 = function () {
-    const msg = {
-        rqs_type: rqs_type_test,
-        out: "prn",
-        rqs: "test message from client"
-    };
+    const msg = buildMessageToWorker("test", "log", "test prn from client");
     postMessageToWorker(msg);
 };
 
+
 const fn4 = function () {
-    const msg = {
-        rqs_type: rqs_type_test,
-        out: "log",
-        rqs: "test log from client"
-    };
+    const msg = buildMessageToWorker("test", "prn", "test log from client");
     postMessageToWorker(msg);
 };
 
 const fn5 = function (name) {
-    document.getElementById("m1").innerHTML = "";
+    document.getElementById(item1).innerHTML = "";
     const img = document.createElement("img");
     img.src = "/ua/pwaes4/imgs/" + name + ".jpg";
     img.style.height = "100%";
-    document.getElementById("m1").appendChild(img);
+    document.getElementById(item1).appendChild(img);
     const audio = new Audio("/ua/pwaes4/sounds/" + name + ".mp3");
     audio.play();
 };
