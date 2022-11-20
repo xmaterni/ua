@@ -159,7 +159,8 @@ function readCache() {
 }
 
 function readCacheRsp(msg) {
-  const rsp_data = msg.rsp_data || "";
-  const html = json2str(rsp_data, "<br>");
-  app_log(html);
+  const rsp_data = msg.rsp_data || [];
+  showList(rsp_data);
+  // const html = json2str(rsp_data, "<br>");
+  // app_log(html);
 }

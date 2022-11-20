@@ -2,11 +2,6 @@
 const item0 = "item0";
 const item1 = "item1";
 
-const op = function (e) {
-    const h = e.innerHTML;
-    msg_prn(item1, h);
-};
-
 const msg_prn = function (id, txt) {
     document.getElementById(id).innerHTML = txt;
 };
@@ -118,8 +113,24 @@ const fn5 = function (name) {
 const toggle_test = function () {
     const e = document.querySelector("div.menu-boxes");
     e.classList.toggle("menu-test");
-    // if (e.classList.contains("menu-test"))
-    //     e.classList.remove("menu-tese");
-    // else
-    //     e.classList.add("menu-test");
+};
+
+
+const showList = function (lst) {
+    const templ = (d) => {
+        return `
+        <li>${d}</li>
+        `;
+    };
+    const jt = UaJthl().set_template(templ);
+    jt.append_html("<div class='list'><ul>");
+    // jt.append_json_array()lst;
+    for (let item of lst)
+        jt.append(item);
+    jt.append_html("</ul></div>");
+    const t = jt.text();
+    const item1 = document.getElementById("item1");
+    item1.innerHTML=t;
+
+
 };

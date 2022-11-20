@@ -112,7 +112,18 @@ div.container {
     div.item1 {
         background-color: @bck-item1;
         flex: 10;
-        text-align: right;
+        div.list{
+            margin-left: 100px;
+            text-align: left;
+            border:1px solid red;
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;        
+            }
+        }
     }
 
     div.item2 {
