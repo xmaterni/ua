@@ -96,11 +96,11 @@ const readCache = function () {
         return cache.keys();
     }).then((requests) => {
         const lst = [];
-        for (let rqs of requests) {
-            const u = rqs.url;
-            lst.push(u);
-        }
+        for (let rqs of requests)
+            lst.push(rqs.url);
         return lst;
+    }).then((urls) => {
+        return urls;
     });
 };
 
