@@ -17,10 +17,6 @@ const msg_clear = function (id) {
 };
 
 
-const clear = function () {
-    msg_clear(item1);
-};
-
 const fn0 = function () {
     fetch("data/anag.json")
         .then(function (response) {
@@ -124,13 +120,10 @@ const showList = function (lst) {
     };
     const jt = UaJthl().set_template(templ);
     jt.append_html("<div class='list'><ul>");
-    // jt.append_json_array()lst;
     for (let item of lst)
         jt.append(item);
     jt.append_html("</ul></div>");
     const t = jt.text();
     const item1 = document.getElementById("item1");
-    item1.innerHTML=t;
-
-
+    item1.innerHTML = t;
 };
