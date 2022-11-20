@@ -86,38 +86,32 @@ const receivesMessage = function (event) {
   const rqs_cmd = msg.rqs_cmd || "";
   const rsp_cmd = msg.rsp_cmd || "";
   const rsp_data = msg.rsp_data || "";
-
   if (rqs_cmd == "push") {
     if (rsp_cmd == "log") {
       ualog(rsp_data);
     }
     else {
-      const s = `ReceiveMessage Error <br> 
-      rqs_cmd:push<br>
+      const s = `ReceiveMessage Error 
+      rqs_cmd:push
       rsp_cmd:${rsp_cmd} Not Found`;
       alert(s);
     }
   }
-
   else if (rqs_cmd == "test") {
     if (rsp_cmd == "log") {
-      // const html = json2str(rsp_data, "<br>");
-      // ualog(html);
       ualog(rsp_data);
     }
     else if (rsp_cmd == "prn") {
-      // const html = json2str(rsp_data, "<br>");
-      // app_log(html);
       app_log(rsp_data);
     }
   }
-
   else if (rqs_cmd == "read_cache") {
-    readCacheRsp(msg);
+    // readCacheRsp(msg);
+    const txt = json2str(rsp_data, "<br>");
+    ualog(txt);
   }
-
   else {
-    const s = `ReceiveMessage Error <br> 
+    const s = `ReceiveMessage Error 
     rqs_cmd:${rqs_cmd} Not Found`;
     alert(s);
   }
