@@ -69,13 +69,10 @@ self.addEventListener('message', (event) => {
             ualog_status = !ualog_status;
         }
         else if (rqs_cmd == "read_cache") {
-            readCache(rqs);
-            const fn = async function () {
-                const lst = await xreadCache();
-                const msg = buildRspMsgToClients(lst, rqs);
+            readCache().then((urls) => {
+                const msg = buildRspMsgToClients(urls, rqs);
                 postMessageToClients(msg);
-            };
-            fn();
+            });
         }
         else {
             const s = `SW Error listener(messag)<br>
@@ -94,9 +91,9 @@ const postMessageToClients = function (message) {
     });
 };
 
-const xreadCache = async () => {
+const readCache = () => {
     swlog("readCache");
-    const urls = await caches.open(CACHE_NAME).then((cache) => {
+    return caches.open(CACHE_NAME).then((cache) => {
         return cache.keys();
     }).then((requests) => {
         const lst = [];
@@ -104,21 +101,8 @@ const xreadCache = async () => {
             lst.push(rqs.url);
         return lst;
     });
-    return urls;
 };
 
-const readCache = function (rqs) {
-    swlog("readCache");
-    caches.open(CACHE_NAME).then((cache) => {
-        return cache.keys();
-    }).then((requests) => {
-        const lst = [];
-        for (let rqs of requests)
-            lst.push(rqs.url);
-        const msg = buildRspMsgToClients(lst, rqs);
-        postMessageToClients(msg);
-    });
-};
 
 const config = {
     version: "sw_3",
