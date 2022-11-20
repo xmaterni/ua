@@ -101,12 +101,14 @@ const receivesMessage = function (event) {
 
   else if (rqs_cmd == "test") {
     if (rsp_cmd == "log") {
-      const html = json2str(rsp_data, "<br>");
-      ualog(html);
+      // const html = json2str(rsp_data, "<br>");
+      // ualog(html);
+      ualog(rsp_data);
     }
     else if (rsp_cmd == "prn") {
-      const html = json2str(rsp_data, "<br>");
-      app_log(html);
+      // const html = json2str(rsp_data, "<br>");
+      // app_log(html);
+      app_log(rsp_data);
     }
   }
 

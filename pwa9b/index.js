@@ -95,13 +95,13 @@ const fn2 = function () {
 };
 
 const fn3 = function () {
-    const msg = buildMessageToWorker("test", "log", "test prn from client");
+    const msg = buildMessageToWorker("test", "prn", "Test Prn");
     postMessageToWorker(msg);
 };
 
 
 const fn4 = function () {
-    const msg = buildMessageToWorker("test", "prn", "test log from client");
+    const msg = buildMessageToWorker("test", "log", "Test Log");
     postMessageToWorker(msg);
 };
 

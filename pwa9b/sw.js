@@ -62,15 +62,15 @@ self.addEventListener('message', (event) => {
 
         if (rqs_cmd == "test") {
             const data = `received from client ${rqs_data}`;
-            const msg = buildRspMsgToClients(data, rqqs);
+            const msg = buildRspMsgToClients(data, rqs);
             postMessageToClients(msg);
         }
         else if (rqs_cmd == "toggle_ualog") {
             ualog_status = !ualog_status;
         }
-        else if (rqs == "read_cache") {
+        else if (rqs_cmd == "read_cache") {
             const lst = readCache();
-            const msg = buildRspMsgToClients(lst, rqqs);
+            const msg = buildRspMsgToClients(lst, rqs);
             postMessageToClients(msg);
         }
         else {
