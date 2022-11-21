@@ -19,31 +19,32 @@ button {
 }
 
 @media (max-width: 1200px) {
-  div.item0 {
+  .test-media {
     background-color: #044e04 !important;
   }
 }
 
 @media (max-width: 1024px) {
-  div.item0 {
+  .test-media {
     background-color: #142ace !important;
   }
 }
 
 @media (max-width: 765px) {
-  div.item0 {
+  .test-media {
     background-color: #5f5e2b !important;
   }
 }
 
 @media (max-width: 480px) {
-  div.item0 {
+.test-media {
     background-color: #b94008 !important;
   }
 }
 
 @media (max-width: 320px) {
-  div.item0 {
+  .item0,
+  .item1 {
     background-color: #d63ff1 !important;
   }
 }
@@ -91,10 +92,10 @@ body {
 }
 
 @bck-container: #000000;
-@bck-item: lighten(@bck-container, 10%);
+@bck-item: lighten(@bck-container, 0%);
 @bck-item0: lighten(@bck-container, 20%);
-@bck-item1: lighten(@bck-container, 40%);
-@bck-item2: lighten(@bck-container, 60%);
+@bck-item1: lighten(@bck-container, 30%);
+@bck-item2: lighten(@bck-container, 40%);
 
 @frg-conatainer: #ffffff;
 @fsize-root: 12px;
@@ -125,21 +126,21 @@ div.container {
   }
 
   div.item0 {
-    background-color: @bck-item0;
+    background-color: @bck-item0 !important;
     flex: 1;
-    padding-top:10px;
+    padding-top: 10px;
     text-align: center;
   }
 
   div.item1 {
-    background-color: @bck-item1;
+    background-color: @bck-item1 !important;
     flex: 10;
   }
 }
 
 div.item2 {
-  background-color: @bck-item2;
-  flex: 2;
+  background-color: @bck-item2 !important;
+  flex: 1;
 }
 
 .list {
