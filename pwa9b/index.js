@@ -73,11 +73,13 @@ const fn2 = function () {
         })
         .then(function (data) {
             const template = (d, i) => {
-                return `${i}  ${d.id} ${d.cognome} ${d.nome}<br/>`;
+                return `<br>
+                ${i}&nbsp;  ${d.id} ${d.cognome} ${d.nome}
+                <br/>`;
             };
             const jt = UaJthl().set_template(template);
             jt.append_json_array(data, 1);
-            const html = jt.text();
+            const html = jt.html();
             msg_prn(item1, html);
         })
         .catch(function (err) {
