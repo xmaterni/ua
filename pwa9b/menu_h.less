@@ -39,7 +39,7 @@
 @color-menu-hover: #ffffff;
 
 @fsize-menu: clamp(0.8rem, 1.5vw, 1.5rem);
-@fsize-menu-logo: clamp(1.2rem, 1.5vw, 1.7rem);
+@fsize-menu-logo: clamp(1.2rem, 1.6vw, 1.7rem);
 
 div.menu-h {
   background-color: @bck-menu-boxes;
@@ -55,12 +55,13 @@ div.menu-h {
   .menu-logo {
     display: block;
     text-align: center;
+    padding-top: 1vh;
 
     span {
-      padding: 5px;
       background-color: @bck-menu-logo;
       color: @color-menu-logo;
       font-size: @fsize-menu-logo;
+      font-weight: bold;
     }
   }
 
