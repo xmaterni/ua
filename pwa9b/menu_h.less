@@ -38,15 +38,8 @@
 @color-menu-border: lighten(@bck-menu, 30%);
 @color-menu-hover: #ffffff;
 
-// @fsize-menu: calc(5px + 1vw);
-// @fsize-menu-title: calc(8px + 1vw);
-// @fsize-menu-a: calc(7px + 1vw);
-// @fsize-menu-box: calc(7px + 1vw);
-
-@fsize-menu: 1rem;
-@fsize-menu-title: 1rem;
-@fsize-menu-a: 1rem;
-@fsize-menu-box: 1rem;
+@fsize-menu: clamp(0.8rem, 1.5vw, 1.5rem);
+@fsize-menu-logo: clamp(1.2rem, 1.5vw, 1.7rem);
 
 div.menu-h {
   background-color: @bck-menu-boxes;
@@ -56,8 +49,7 @@ div.menu-h {
   top: 0;
   left: 0;
   width: 100vw;
-  min-height: 4vh;
-  max-height: 4vh;
+  height: 35px;
   z-index: 1;
 
   .menu-logo {
@@ -68,7 +60,7 @@ div.menu-h {
       padding: 5px;
       background-color: @bck-menu-logo;
       color: @color-menu-logo;
-      font-size: @fsize-menu-title;
+      font-size: @fsize-menu-logo;
     }
   }
 
@@ -155,11 +147,11 @@ div.menu-h {
     // min-height: 100vh;
     background-color: @bck-menu-boxes;
     position: absolute;
-    margin-top: 30px;
+    margin-top: 35px;
     // padding-top: 30px;
     // padding-left: 40px;
     top: 0;
-    // left: -2000px;
+    left: -2000px;
     transition: left 0.5s ease-out;
     display: flex;
     flex-direction: row;
@@ -178,7 +170,7 @@ div.menu-h {
       min-width: 150px;
       max-width: 190px;
       max-height: 80vh;
-      font-size: @fsize-menu-box;
+      font-size: @fsize-menu;
       background-color: @bck-menu-box;
       box-sizing: border-box;
       flex: 1;
@@ -192,7 +184,6 @@ div.menu-h {
         color: @color-menu-title;
         border-right: 1px solid @color-menu-border;
         text-align: center;
-        font-size: @fsize-menu-title;
         font-style: italic;
       }
 
@@ -213,7 +204,6 @@ div.menu-h {
           a {
             white-space: nowrap;
             color: @color-menu;
-            font-size: @fsize-menu-a;
             display: block;
             margin: 0;
             padding: 5px 5px;
