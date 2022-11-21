@@ -18,23 +18,46 @@ button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 900px) {
-  div.item1 {
-    background-color: #e6c44c !important;
+
+
+@media (max-width: 1200px) {
+  div.item0 {
+    background-color: #044e04 !important;
   }
 }
 
-@media (max-width: 600px) {
-  div.item1 {
-    background-color: #332ae1 !important;
+@media (max-width: 1024px) {
+  div.item0 {
+    background-color: #142ace !important;
   }
 }
 
-@media (max-width: 350px) {
-  div.item1 {
-    background-color: #ee550d !important;
+@media (max-width: 765px) {
+  div.item0 {
+    background-color: #aea802 !important;
   }
 }
+
+@media (max-width: 480px) {
+  div.item0 {
+    background-color: #b94008 !important;
+  }
+}
+
+@media (max-width: 320px) {
+  div.item0 {
+    background-color: #d63ff1 !important;
+  }
+}
+
+
+// 320px — 480px: Mobile devices.
+// 481px — 768px: iPads, Tablets.
+// 769px — 1024px: Small screens, laptops.
+// 1025px — 1200px: Desktops, large screens.
+// 1201px and more — Extra large screens, TV
+
+
 
 .brd0 {
   border: 1px solid red;
@@ -58,6 +81,7 @@ button {
 
 html {
   background-color: #000000;
+  font-size:@fsize-root;
 }
 
 body {
@@ -80,9 +104,13 @@ body {
 
 @frg-conatainer: #ffffff;
 
-@fsize-body: 10px;
-@fsize-container: calc(8px + 1vw);
-@fsize-list: calc(6px + 1vw);
+@fsize-root:calc(12px + 1vw);
+// @fsize-root:12px;
+@fsize-body: 1rem;
+// @fsize-container: calc(8px + 1vw);
+@fsize-container:1rem;
+// @fsize-list: calc(6px + 1vw);
+@fsize-list: 1rem;
 
 div.container {
   // .brd2;
