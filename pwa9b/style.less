@@ -112,28 +112,33 @@ div.container {
   div.item1 {
     background-color: @bck-item1;
     flex: 10;
-    div.list {
-      box-sizing: border-box;
-      display: inline-block;
-      padding:10px;
-      position: absolute;
-      right: 0;
-      background-color: #000000;
-      color: #ffffff;
-      text-align: left;
-      border: 1px solid #10ff0b;
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-      }
-    }
   }
+}
 
-  div.item2 {
-    background-color: @bck-item2;
-    flex: 2;
+div.item2 {
+  background-color: @bck-item2;
+  flex: 2;
+}
+
+.list {
+  box-sizing: border-box;
+  display: inline-block;
+  max-height: 80vh;
+  padding: 5px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: left;
+  border: 1px solid #10ff0b;
+  overflow-y: auto;
+  overflow-x: auto;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    li {
+      padding: 5px 5px;
+    }
   }
 }

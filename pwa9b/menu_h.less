@@ -99,8 +99,8 @@ div.menu-h {
     display: block;
     position: absolute;
     top: 0;
-    // left: 0;
-    right: 10px;
+    left: 0;
+    // right: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -142,10 +142,12 @@ div.menu-h {
   }
 
   div.menu-boxes {
+    // .brd0;
     box-sizing: border-box;
-    min-height: 100vh;
+    // min-height: 100vh;
     background-color: @bck-menu-boxes;
     position: absolute;
+    margin-top: 30px;
     // padding-top: 30px;
     // padding-left: 40px;
     top: 0;
@@ -156,16 +158,19 @@ div.menu-h {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
-    overflow-y: auto;
-    overflow-x: auto;
+    // overflow-y: auto;
+    // overflow-x: auto;
 
     div.menu-box {
-      // min-width: 200px;
+      min-width: 200px;
+      max-height: 80vh;
       background-color: @bck-menu-box;
       box-sizing: border-box;
       flex: 1;
       padding: 0;
-
+      overflow-y: auto;
+      overflow-x: auto;
+  
       .menu-title {
         padding: 2px 0;
         background-color: @bck-menu-title;

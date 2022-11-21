@@ -126,4 +126,10 @@ const showList = function (lst) {
     const t = jt.text();
     const item1 = document.getElementById("item1");
     item1.innerHTML = t;
+    const l=item1.querySelector(".list");
+    UaDrag(l);
+    // const wnd = UaWindowAdm.create("list_");
+    // wnd.drag();
+    // wnd.setXY(100,100);
+    // wnd.setHtml(t).show();
 };
