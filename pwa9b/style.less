@@ -67,6 +67,7 @@ body {
   position: relative;
   padding: 0;
   margin: 0 auto;
+  font-size: @fsize-body;
   overflow-y: auto;
   overflow-x: auto;
 }
@@ -78,7 +79,10 @@ body {
 @bck-item2: lighten(@bck-container, 60%);
 
 @frg-conatainer: #ffffff;
-@fsize-container: calc(10px + 1vw);
+
+@fsize-body: 10px;
+@fsize-container: calc(8px + 1vw);
+@fsize-list: calc(6px + 1vw);
 
 div.container {
   // .brd2;
@@ -123,6 +127,7 @@ div.item2 {
 .list {
   box-sizing: border-box;
   display: inline-block;
+  font-size: @fsize-list;
   max-height: 80vh;
   padding: 5px;
   background-color: #000000;

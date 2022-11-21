@@ -24,7 +24,7 @@
   border: 1px solid #eeec53;
 }
 
-@bck-menu: #201e1e;
+@bck-menu: #000000;
 @bck-menu-logo: lighten(@bck-menu, 5%);
 @bck-menu-boxes: lighten(@bck-menu, 5%);
 @bck-menu-title: lighten(@bck-menu, 20%);
@@ -33,17 +33,20 @@
 
 @color-menu: #fafafa;
 @color-menu-logo: #edda0a;
-@color-menu-icon: #fbf5f5;
+@color-menu-icon: #aea7a7;
 @color-menu-title: #ffffff;
 @color-menu-border: lighten(@bck-menu, 30%);
 @color-menu-hover: #ffffff;
 
+@fsize-menu: calc(5px + 1vw);
 @fsize-menu-title: calc(8px + 1vw);
-@fsize-menu-a: calc(8px + 1vw);
+@fsize-menu-a: calc(7px + 1vw);
+@fsize-menu-box: calc(7px + 1vw);
 
 div.menu-h {
   background-color: @bck-menu-boxes;
   box-sizing: border-box;
+  font-size: @fsize-menu;
   position: fixed;
   top: 0;
   left: 0;
@@ -98,8 +101,8 @@ div.menu-h {
     background-color: inherit;
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 5px;
+    left:10px;
     // right: 10px;
     width: 30px;
     height: 30px;
@@ -114,7 +117,7 @@ div.menu-h {
       top: 14px;
       left: 0;
       width: 28px;
-      height: 2px;
+      height: 3px;
       transition-duration: 0.25s;
     }
 
@@ -161,9 +164,16 @@ div.menu-h {
     // overflow-y: auto;
     // overflow-x: auto;
 
+    .aaa{
+      background-color: #d9e760 !important;
+      color:#000000 !important;
+    }
+
     div.menu-box {
-      min-width: 200px;
+      min-width: 150px;
+      max-width: 190px;
       max-height: 80vh;
+      font-size: @fsize-menu-box;
       background-color: @bck-menu-box;
       box-sizing: border-box;
       flex: 1;

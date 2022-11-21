@@ -100,7 +100,8 @@ const fn5 = function (name) {
     document.getElementById(item1).innerHTML = "";
     const img = document.createElement("img");
     img.src = "/ua/pwaes4/imgs/" + name + ".jpg";
-    img.style.height = "100%";
+    // img.style.height = "100%";
+    img.style.width = "100%";
     document.getElementById(item1).appendChild(img);
     const audio = new Audio("/ua/pwaes4/sounds/" + name + ".mp3");
     audio.play();
