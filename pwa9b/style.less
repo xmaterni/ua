@@ -19,33 +19,67 @@ button {
 }
 
 @media (max-width: 1200px) {
-  .test-media {
+  .test_media {
     background-color: #044e04 !important;
+    &::after {
+      content: "1200";
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      padding-left: 80vw;
+    }
   }
 }
 
 @media (max-width: 1024px) {
-  .test-media {
+  .test_media {
     background-color: #142ace !important;
+    &::after {
+      content: "1024";
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      padding-left: 80vw;
+    }
   }
 }
 
 @media (max-width: 765px) {
-  .test-media {
+  .test_media {
     background-color: #5f5e2b !important;
+    &::after {
+      content: "765";
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      padding-left: 80vw;
+    }
   }
 }
 
 @media (max-width: 480px) {
-.test-media {
+  .test_media {
     background-color: #b94008 !important;
+    &::after {
+      content: "480";
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      padding-left: 80vw;
+    }
   }
 }
 
 @media (max-width: 320px) {
-  .item0,
-  .item1 {
+  .test_media {
     background-color: #d63ff1 !important;
+    &::after {
+      content: "320";
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      padding-left: 80vw;
+    }
   }
 }
 
@@ -122,24 +156,24 @@ div.container {
     padding: 0;
     font-size: @fsize-container;
     color: @frg-conatainer;
-    background-color: @bck-item;
+    // background-color: @bck-item;
   }
 
   div.item0 {
-    background-color: @bck-item0 !important;
+    background-color: @bck-item0;
     flex: 1;
     padding-top: 10px;
     text-align: center;
   }
 
   div.item1 {
-    background-color: @bck-item1 !important;
+    background-color: @bck-item1;
     flex: 10;
   }
 }
 
 div.item2 {
-  background-color: @bck-item2 !important;
+  background-color: @bck-item2;
   flex: 1;
 }
 
