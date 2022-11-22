@@ -63,8 +63,9 @@
             <li><a href="#" onCLick="readCache();">Read cache</a></li>
             <li><a href="#" onClick="clearCaches();">clearCaches</a></li>
             <li><a href="#" onClick="unregist();">unregist</a></li>
-            <li><a class="aaa" href="#" onClick="reset();">Reset</a></li>
-            <li><a class="aaa" href="#" onClick="reload();">Reload</a></li>
+            <li class="menu-title">Update SW</li>
+            <li><a class="aaa0" href="#" onClick="reload();">Reload</a></li>
+            <li><a class="aaa1" href="#" onClick="reset();">Reset</a></li>
           </ul>
         </div>
       </div>
@@ -78,7 +79,7 @@
   </body>
 </html>
 <script>
-  UaLog.setXY(100, 100).setZ(11).new().toggle();
+  UaLog.setXY(300, 70).setZ(11).new().toggle();
   
   (function () {
     const bt = document.querySelector("#menu-btn");
