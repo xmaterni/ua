@@ -1,12 +1,12 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 2,
   "version": "1.0.1",
   "name": "pwa9b",
   "short_name": "pwa9b",
   "description": "Progressive Web App pwa9b",
   "theme_color": "#ff4500",
   "background_color": "#333333",
-  "display": "standalone",
+  "display": "fullscreen",
   "start_url": "/ua/pwa9b/index.html",
   "icons": [
     {
