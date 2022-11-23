@@ -108,10 +108,11 @@ const config = {
     version: "sw_3",
     staticCacheItems: [
         "/ua/pwa9b/index.html",
-        "/ua/pwa9b/style.less",
-        "/ua/pwa9b/menu_h.less",
-
-        "/ua/pwa9b/uajs/less.min.js",
+        // "/ua/pwa9b/style.less",
+        // "/ua/pwa9b/menu_h.less",
+        // "/ua/pwa9b/uajs/less.min.js",
+        "/ua/pwa9b/style.css",
+        "/ua/pwa9b/menu_h.css",
 
         "/ua/pwa9b/index.js",
         "/ua/pwa9b/app.js",
