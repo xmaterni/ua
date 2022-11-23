@@ -124,6 +124,7 @@ const config = {
         "/ua/pwa9b/uajs/uajthl.js",
 
         "/ua/pwa9b/icons/icon-144x144.png",
+        "/ua/pwa9b/icons/icon-192x192.png",
         "/ua/pwa9b/icons/icon-512x512.png",
 
         "/ua/pwa9b/imgs/fox1.jpg",
