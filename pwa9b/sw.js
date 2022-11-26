@@ -108,11 +108,11 @@ const config = {
     version: "sw_3",
     staticCacheItems: [
         "/ua/pwa9b/index.html",
-        // "/ua/pwa9b/style.less",
-        // "/ua/pwa9b/menu_h.less",
-        // "/ua/pwa9b/uajs/less.min.js",
-        "/ua/pwa9b/style.css",
-        "/ua/pwa9b/menu_h.css",
+        "/ua/pwa9b/style.less",
+        "/ua/pwa9b/menu_h.less",
+        "/ua/pwa9b/uajs/less.min.js",
+        // "/ua/pwa9b/style.css",
+        // "/ua/pwa9b/menu_h.css",
 
         "/ua/pwa9b/index.js",
         "/ua/pwa9b/app.js",
@@ -123,9 +123,9 @@ const config = {
         "/ua/pwa9b/uajs/ualog.js",
         "/ua/pwa9b/uajs/uajthl.js",
 
-        "/ua/pwa9b/icons/icon-144x144.png",
-        "/ua/pwa9b/icons/icon-192x192.png",
-        "/ua/pwa9b/icons/icon-512x512.png",
+        // "/ua/pwa9b/icons/icon-144x144.png",
+        // "/ua/pwa9b/icons/icon-192x192.png",
+        // "/ua/pwa9b/icons/icon-512x512.png",
 
         "/ua/pwa9b/imgs/fox1.jpg",
         "/ua/pwa9b/imgs/fox2.jpg",
