@@ -129,6 +129,7 @@ function clearCaches() {
 
 function reset() {
   clearCaches();
+  unregister();
   unregistAll();
 }
 
