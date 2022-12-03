@@ -6,27 +6,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Author:G.Materni, Test PWA">
+    <meta name="description" content="Author:G.Materni, Test PWA" />
 
     <title>pwa9b</title>
-    <!-- <link rel="apple-touch-icon-precomposed" /> -->  
+    <!-- <link rel="apple-touch-icon-precomposed" /> -->
     <!-- <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="menu_h.css"> -->
     <!--  -->
     <link rel="stylesheet/less" type="text/css" href="style.less" />
     <link rel="stylesheet/less" type="text/css" href="menu_h.less" />
-    <script type="text/javascript" src="uajs/less.min.js"></script> -->
+    <script type="text/javascript" src="uajs/less.js"></script>
     <!--  -->
     <script type="text/javascript" src="uajs/uawindow.js"></script>
     <script type="text/javascript" src="uajs/uadrag.js"></script>
     <script type="text/javascript" src="uajs/ualog.js"></script>
     <script type="text/javascript" src="uajs/uajthl.js"></script>
-     <!--  -->
-    <script type="text/javascript" src="index.js"></script>
-    <script src="app.js" defer></script>
     <!--  -->
-    <link rel="manifest" href="/ua/pwa9b/manifest.json">
+    <script type="text/javascript" src="index.js"></script>
+    <!--  -->
+    <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#f06420" />
+    <!--  -->
+    <script src="app.js" defer></script>
   </head>
 
   <body>
@@ -51,7 +52,7 @@
             <li><a href="#" onClick="fn5('fox2');">image2</a></li>
             <li><a href="#" onClick="fn5('fox3');">image3</a></li>
             <li><a href="#" onClick="fn5('fox4');">image4</a></li>
-            
+
             <li class="menu-title">Log</li>
             <li><a href="#" onClick="UaLog.toggle();">Toggle Log</a></li>
             <li><a href="#" onClick="toggleUaLog();">Toggle SW Log</a></li>
@@ -83,7 +84,7 @@
 </html>
 <script>
   UaLog.setXY(150, 0).setZ(11).new();
-  
+
   (function () {
     const bt = document.querySelector("#id-menu-btn");
     const mc = document.querySelector("div.menu-boxes");

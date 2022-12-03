@@ -107,10 +107,11 @@ const readCache = () => {
 const config = {
     version: "sw_3",
     staticCacheItems: [
+        "./",
         "/ua/pwa9b/index.html",
         "/ua/pwa9b/style.less",
         "/ua/pwa9b/menu_h.less",
-        "/ua/pwa9b/uajs/less.min.js",
+        "/ua/pwa9b/uajs/less.js",
         // "/ua/pwa9b/style.css",
         // "/ua/pwa9b/menu_h.css",
 
@@ -123,9 +124,14 @@ const config = {
         "/ua/pwa9b/uajs/ualog.js",
         "/ua/pwa9b/uajs/uajthl.js",
 
-        "/ua/pwa9b/icons/maskable_icon_x192.png",
+        "/ua/pwa9b/icons/maskable_icon_x144.png",
         "/ua/pwa9b/icons/maskable_icon_x384.png",
         "/ua/pwa9b/icons/maskable_icon_x512.png",
+
+        "/ua/pwa9b/icons/icon07_x144.png",
+        "/ua/pwa9b/icons/icon07_x384.png",
+        "/ua/pwa9b/icons/icon07_x512.png",
+
 
         "/ua/pwa9b/imgs/fox1.jpg",
         "/ua/pwa9b/imgs/fox2.jpg",
